@@ -43,22 +43,17 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
             viewHolder = (ViewHolder)rowView.getTag();
         }
 
-        viewHolder.legalNameView.setText(c.getLegalName());
-        viewHolder.alternateNameView.setText(c.getAltName());
-        viewHolder.addressView.setText(c.getAddress());
+        viewHolder.companyDetails.setText(c.getLegalName() + " - " + c.getAltName() + " - " + c.getAddress());
+
 
         return  rowView;
     }
 
     static class ViewHolder {
-        public final TextView legalNameView;
-        public final TextView alternateNameView;
-        public final TextView addressView;
+        public final TextView companyDetails;
 
         public ViewHolder(View view){
-            legalNameView = (TextView)view.findViewById(R.id.li_company_legal_name);
-            alternateNameView = (TextView)view.findViewById(R.id.li_company_alternate_name);
-            addressView = (TextView)view.findViewById(R.id.li_company_address);
+            companyDetails = (TextView)view.findViewById(R.id.li_company_details);
         }
     }
 
